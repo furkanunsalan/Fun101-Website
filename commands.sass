@@ -1,0 +1,56 @@
+@import "./mediaVariables"
+
+@mixin mobile
+  @media (min-width: $mobile_portraitMin) and (max-width: $mobile_portraitMax)
+    @content
+
+@mixin tablet
+  @media (min-width: $tablet_min) and (max-width: $tablet_max)
+    @content
+
+@mixin tabletbig
+  @media (min-width: $tablet_landscapeMin) and (max-width: $tablet_landscapeMax)
+    @content
+
+@mixin laptop
+  @media (min-width: 1024px) and (max-width: 1845px)
+    @content
+
+@mixin chonk
+  @media (min-width: 1024px) and (max-width: 1433px)
+    @content
+
+
+body
+  background-image: url("images/discord.jpg")
+  background-repeat: no-repeat
+  background-size: cover
+
+body::-webkit-scrollbar
+  display: none
+
+.body
+  -ms-overflow-style: none
+
+pre
+  width: 39%
+  display: block
+  margin-left: auto
+  margin-right: auto
+  border-radius: 10px
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px
+  background-color: #7289da
+  border: none
+
+p
+  text-align: center
+  color: white
+  font-size: 15px
+
+@include mobile
+  pre
+    width: 85%
+
+@include tabletbig
+  pre
+    width: 65%

@@ -1,0 +1,91 @@
+@import "./mediaVariables"
+
+@mixin mobile
+  @media (min-width: $mobile_portraitMin) and (max-width: $mobile_portraitMax)
+    @content
+
+@mixin tablet
+  @media (min-width: $tablet_min) and (max-width: $tablet_max)
+    @content
+
+@mixin tabletbig
+  @media (min-width: $tablet_landscapeMin) and (max-width: $tablet_landscapeMax)
+    @content
+
+@mixin laptop
+  @media (min-width: 1024px) and (max-width: 1845px)
+    @content
+
+@mixin chonk
+  @media (min-width: 1024px) and (max-width: 1433px)
+    @content
+
+
+body
+  background-image: url("images/discord.jpg")
+  background-repeat: no-repeat
+  background-size: cover
+
+body::-webkit-scrollbar
+  display: none
+
+.body
+  -ms-overflow-style: none
+
+h3
+  text-align: center
+  color: black
+
+.mail
+  border-radius: 700px
+  border: none
+  width: 200px
+  height: 200px
+  background: url("images/mail.png")
+  background-repeat: no-repeat
+  background-size: cover
+  display: block
+  margin-left: auto
+  margin-right: auto
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px
+
+.furkan
+  border-radius: 700px
+  border: none
+  width: 200px
+  height: 200px
+  background: url("images/furkan.png")
+  background-color: gray
+  background-repeat: no-repeat
+  background-size: cover
+  display: block
+  margin-left: auto
+  margin-right: auto
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px
+
+.efe
+  border-radius: 700px
+  border: none
+  width: 200px
+  height: 200px
+  background: url("images/efe.png")
+  background-repeat: no-repeat
+  background-size: cover
+  display: block
+  margin-left: auto
+  margin-right: auto
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px
+
+@include mobile
+  button
+    width: 150px
+    height: 150px
+  h3
+    font-size: 20px
+
+@include tabletbig
+  button
+    width: 200px
+    height: 200px
+  h3
+    font-size: 25px
